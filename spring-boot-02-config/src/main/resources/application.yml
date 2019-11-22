@@ -1,0 +1,38 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+
+#可以使用yml文件中的文档块的方式来决定使用那个配置文件，这样的方法更加的简捷，没有必要再新建application-dev.properties和application-prod.properties
+#配置文件，而直接使用像下面的文档块的方式来进行配置，此时只要在上面的active中填写那个就会激活对应的那个
+#另外还有一种命令行的方式来配置指定激活那个：--spring.profiles.active=dev，具体配置方式自行百度，在此不再细说
+#还有一种是使用虚拟机参数来进行配置，具体操作和上面在同一位置，在此不细说
+---
+server:
+  port: 8083
+spring:
+  profiles: dev
+
+---
+server:
+  port: 8084
+spring:
+  profiles: prod
+
+---
+#person:
+##  lastName: hello
+##  下面这种写法也可以
+#  last-name: hello
+#  age: 18
+#  boss: false
+#  birth: 2017/12/12
+#  maps: {k1: v1,k2: 12}
+#  lists:
+#    - lisi
+#    - zhaoliu
+#  dog:
+#    name: 小狗
+#    age: 12
+
